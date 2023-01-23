@@ -3,7 +3,7 @@
 		Plugin Name: Tester
 		Plugin URI:  https://www.example.com/
 		Description: Tester plugin.
-		Version:     1.0.1
+		Version:     1.0.2
 		Author:      Adam Laita
 		Author URI:  https://www.example.com/
 		License:     GPL3
