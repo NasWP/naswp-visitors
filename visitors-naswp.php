@@ -75,5 +75,13 @@ require_once( __DIR__ . '/includes/class-naswp-visitors-post.php' );
 require_once( __DIR__ . '/includes/class-naswp-visitors-query.php' );
 NasWP_Visitors_Query::hook();
 
+// Views in admin tables
+require_once( __DIR__ . '/admin/class-naswp-visitors-admin-table.php' );
+add_action( 'admin_init', ['NasWP_Visitors_Admin_Table', 'hook'] );
+
+// Admin meta boxes to show and edit views
+require_once( __DIR__ . '/admin/class-naswp-visitors-admin-metabox.php' );
+if ( is_admin() ) NasWP_Visitors_Admin_MetaBox::hook();
+
 // Initialize tracking on front-end
 require_once( __DIR__ . '/public/tracking.php' );
