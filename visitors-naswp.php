@@ -74,3 +74,6 @@ require_once( __DIR__ . '/includes/class-naswp-visitors-post.php' );
 // WP query tweaks
 require_once( __DIR__ . '/includes/class-naswp-visitors-query.php' );
 NasWP_Visitors_Query::hook();
+
+// Initialize tracking on front-end
+require_once( __DIR__ . '/public/tracking.php' );
