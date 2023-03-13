@@ -28,7 +28,7 @@ class NasWP_Visitors_Admin_MetaBox
 			__( 'Visitors', 'naswp_visitors' ),
 			[ $this, 'render_meta_box_content' ],
 			$postType,
-			'advanced',
+			'side',
 			'high'
 		);
 	}
