@@ -28,13 +28,16 @@ require_once( $_GET['path'] . 'wp-load.php' );
 $verified = isset( $_GET['nonce'] ) && $_GET['nonce'] && wp_verify_nonce( $_GET['nonce'], NASWP_VISITORS_NONCE );
 if ( !$verified ) wp_send_json_error( 'Error: Nonce invalid.' );
 
-$postId = ( isset( $_GET['ID'] ) && is_numeric( $_GET['ID'] ) ) ? $_GET['ID'] : null;
-if ( !$postId ) wp_send_json_error( 'Error: Post ID invalid.' );
+$objId = ( isset( $_GET['ID'] ) && is_numeric( $_GET['ID'] ) ) ? $_GET['ID'] : null;
+if ( !$objId ) wp_send_json_error( 'Error: Object ID invalid.' );
+
+$objType = ( isset( $_GET['type'] ) && in_array( $_GET['type'], [ 'post', 'tax' ] ) ) ? trim( $_GET['type'] ) : null;
+if ( !$objType ) wp_send_json_error( 'Error: Object type invalid.' );
 
 
 // $ref = strtotime('19.11.2021');
 $ref = null;
-$model = new NasWP_Visitors_Post($postId, $ref);
+$model = ( $objType === 'post' ) ? new NasWP_Visitors_Post($objId, $ref) : new NasWP_Visitors_Term($objId, $ref);
 $model->track_visit();
 
 

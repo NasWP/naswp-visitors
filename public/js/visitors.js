@@ -19,7 +19,7 @@
   }
 
   function countVisits() {
-    const url = `${NASWP_VISITORS.ajaxurl}?ID=${NASWP_VISITORS.id}&nonce=${NASWP_VISITORS.nonce}&path=${NASWP_VISITORS.path}`;
+    const url = `${NASWP_VISITORS.ajaxurl}?ID=${NASWP_VISITORS.id}&type=${NASWP_VISITORS.type}&nonce=${NASWP_VISITORS.nonce}&path=${NASWP_VISITORS.path}`;
 
     fetch(url)
       // .then(response => response.text())

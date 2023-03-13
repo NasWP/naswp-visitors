@@ -24,6 +24,17 @@ if ( !defined( 'NASWP_VISITORS_CPT_DEFAULT' ) ) {
 	] );
 }
 
+
+// Which taxonomies to track by default?
+// Use filter 'naswp_visitors_tax' to change it.
+if ( !defined( 'NASWP_VISITORS_TAX_DEFAULT' ) ) {
+	define( 'NASWP_VISITORS_TAX_DEFAULT', [
+		'category',
+		'tag'
+	] );
+}
+
+
 // Visits of all anonymous users are tracked.
 // Logged-in users of following default roles will be tracked as well.
 // Use filter 'naswp_visitors_roles' to change it.
@@ -70,8 +81,9 @@ if ( !defined( 'NASWP_VISITORS_NONCE' ) ) {
 }
 
 // Visitor counter models
+require_once( __DIR__ . '/includes/class-naswp-visitors-base.php' );
 require_once( __DIR__ . '/includes/class-naswp-visitors-post.php' );
-// require_once( __DIR__ . '/includes/class-naswp-visitors-term.php' );
+require_once( __DIR__ . '/includes/class-naswp-visitors-term.php' );
 
 // WP query tweaks
 require_once( __DIR__ . '/includes/class-naswp-visitors-query.php' );

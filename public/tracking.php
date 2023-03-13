@@ -4,10 +4,17 @@
 add_action( 'wp', function() {
 	if ( is_admin() ) return;
 
-	// Check CPT
+	// Check CPT and taxonomy
 	$obj = get_queried_object();
 	$cpts = apply_filters( 'naswp_visitors_cpt', NASWP_VISITORS_CPT_DEFAULT );
-	if ( !$obj instanceof WP_Post || !in_array( $obj->post_type, $cpts ) ) return;
+	$taxonomies = apply_filters( 'naswp_visitors_tax', NASWP_VISITORS_TAX_DEFAULT );
+	// if ( !$obj instanceof WP_Post || !in_array( $obj->post_type, $cpts ) ) return;
+	if (
+		!( $obj instanceof WP_Post && in_array( $obj->post_type, $cpts ) ) &&
+		!( $obj instanceof WP_Term && in_array( $obj->taxonomy, $taxonomies) )
+	) {
+		return;
+	}
 
 	// Check user
 	if ( is_user_logged_in() ) {
@@ -23,7 +30,8 @@ add_action( 'wp', function() {
 		// 'ajaxurl' => admin_url( 'admin-ajax.php' ),
 		'path' => ABSPATH,
 		'nonce' => wp_create_nonce( NASWP_VISITORS_NONCE ),
-		'id' => $obj->ID
+		'id' => ($obj instanceof WP_Post) ? $obj->ID : $obj->term_id,
+		'type' => ($obj instanceof WP_Post) ? 'post' : 'tax'
 	] );
 
 
