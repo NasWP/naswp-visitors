@@ -1,6 +1,47 @@
 # visitors-naswp
 Visitors plugin for WP community.
 
+## Plugin configuration
+
+By default, this plugin tracks visits of `page` and `post` post types and `category` and `post_tag` taxonomy terms. Visits are tracked only for anonymous users or users logged in with `subscriber` role.
+
+You can modify default configuration using filters. To do so, place this code to functions.php:
+
+```php
+// Change tracked post types
+add_filter( 'naswp_visitors_cpt', function( array $defaultTypes ) {
+	// Add posts of 'book' post type to be tracked
+	$newTypes = array_merge( $defaultTypes, [ 'book' ] );
+
+	// Remove 'page' post type from tracked
+	$newTypes = array_filter( $defaultTypes, fn( string $type ) => $type !== 'page' );
+
+	return $newTypes;
+} );
+
+// Change tracked taxonomies
+add_filter( 'naswp_visitors_tax', function( array $defaultTaxonomies ) {
+	// Add terms of 'book_author' to be tracked
+	$newTaxonomies = array_merge( $defaultTaxonomies, [ 'book_author' ] );
+
+	// Remove 'post_tag' from tracked taxonomies
+	$newTaxonomies = array_filter( $defaultTaxonomies, fn( string $tax ) => $tax !== 'post_tag' );
+
+	return $newTaxonomies;
+} );
+
+// Change tracked user roles (anonymous users are always tracked)
+add_filter( 'naswp_visitors_roles', function( array $defaultRoles ) {
+	// Add 'admin' role to be tracked
+	$newRoles = array_merge( $defaultRoles, [ 'admin' ] );
+
+	// Remove 'subscriber' from tracked roles
+	$newRoles = array_filter( $defaultRoles, fn( string $role ) => $role !== 'subscriber' );
+
+	return $newRoles;
+} );
+
+```
 
 ## How to get number of visitors
 
