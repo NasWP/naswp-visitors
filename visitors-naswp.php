@@ -30,7 +30,7 @@ if ( !defined( 'NASWP_VISITORS_CPT_DEFAULT' ) ) {
 if ( !defined( 'NASWP_VISITORS_TAX_DEFAULT' ) ) {
 	define( 'NASWP_VISITORS_TAX_DEFAULT', [
 		'category',
-		'tag'
+		'post_tag'
 	] );
 }
 
