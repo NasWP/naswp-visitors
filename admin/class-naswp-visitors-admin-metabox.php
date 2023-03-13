@@ -45,9 +45,9 @@ class NasWP_Visitors_Admin_MetaBox
 		<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:20px">
 			<?php
 			$this->render_float_table( $model );
-			$this->render_views_table( $model, __( 'Daily views', 'naswp_visitors' ), $model->get_daily_data(), 'D, j. F Y' );
-			$this->render_views_table( $model, __( 'Monthly views', 'naswp_visitors' ), $model->get_monthly_data(), 'F Y', );
-			$this->render_views_table( $model, __( 'Yearly views', 'naswp_visitors' ), $model->get_yearly_data(), 'Y', );
+			// $this->render_views_table( $model, __( 'Daily views', 'naswp_visitors' ), $model->get_daily_data(), 'D, j. F Y' );
+			// $this->render_views_table( $model, __( 'Monthly views', 'naswp_visitors' ), $model->get_monthly_data(), 'F Y', );
+			// $this->render_views_table( $model, __( 'Yearly views', 'naswp_visitors' ), $model->get_yearly_data(), 'Y', );
 			?>
 		</div>
 		<div style="display:flex;flex-wrap:wrap;align-items:center;gap:30px">
