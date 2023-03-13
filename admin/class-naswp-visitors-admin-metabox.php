@@ -25,7 +25,7 @@ class NasWP_Visitors_Admin_MetaBox
 		if ( !in_array( $postType, $cpts ) ) return;
 		add_meta_box(
 			'naswp_visitors',
-			__( 'Visitors', 'naswp_visitors' ),
+			__( 'Visitors', 'visitors-naswp' ),
 			[ $this, 'render_meta_box_content' ],
 			$postType,
 			'side',
@@ -45,24 +45,24 @@ class NasWP_Visitors_Admin_MetaBox
 		<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:20px">
 			<?php
 			$this->render_float_table( $model );
-			// $this->render_views_table( $model, __( 'Daily views', 'naswp_visitors' ), $model->get_daily_data(), 'D, j. F Y' );
-			// $this->render_views_table( $model, __( 'Monthly views', 'naswp_visitors' ), $model->get_monthly_data(), 'F Y', );
-			// $this->render_views_table( $model, __( 'Yearly views', 'naswp_visitors' ), $model->get_yearly_data(), 'Y', );
+			// $this->render_views_table( $model, __( 'Daily views', 'visitors-naswp' ), $model->get_daily_data(), 'D, j. F Y' );
+			// $this->render_views_table( $model, __( 'Monthly views', 'visitors-naswp' ), $model->get_monthly_data(), 'F Y', );
+			// $this->render_views_table( $model, __( 'Yearly views', 'visitors-naswp' ), $model->get_yearly_data(), 'Y', );
 			?>
 		</div>
 		<div style="display:flex;flex-wrap:wrap;align-items:center;gap:30px">
 			<label>
 				<br>
 				<input type="checkbox" name="naswp_reset" value="1" class="components-checkbox-control__input">
-				<?php _e( 'Reset all data for this post on next update. Refresh page after save.', 'naswp_visitors' ) ?>
+				<?php _e( 'Reset all data for this post on next update. Refresh page after save.', 'visitors-naswp' ) ?>
 			</label>
 
 			<div class="form-field form-required term-name-wrap">
-				<label for="naswp_total"><?php _e( 'Total views number', 'naswp_visitors' ) ?></label>
+				<label for="naswp_total"><?php _e( 'Total views number', 'visitors-naswp' ) ?></label>
 				<input name="naswp_total" id="naswp_total" type="number" value="<?php echo $model->get_total() ?>" size="40" aria-required="true">
 			</div>
 
-			<?php wp_nonce_field( 'naswp_visitors', 'naswp_visitors_nonce' ) ?>
+			<?php wp_nonce_field( 'visitors-naswp', 'naswp_visitors_nonce' ) ?>
 		</div>
 		<?php
 	}
@@ -77,24 +77,24 @@ class NasWP_Visitors_Admin_MetaBox
 		<table style="flex-shrink:0">
 			<thead>
 				<tr>
-					<th colspan="2" style="text-align:left"><?php _e( 'Statistics', 'naswp_visitors' ) ?></th>
+					<th colspan="2" style="text-align:left"><?php _e( 'Statistics', 'visitors-naswp' ) ?></th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td><?php _e( 'Total views', 'naswp_visitors' ) ?>:</td>
+					<td><?php _e( 'Total views', 'visitors-naswp' ) ?>:</td>
 					<th><?php echo $model->get_total() ?>x</th>
 				</tr>
 				<tr>
-					<td><?php _e( 'Views in past 24 hours', 'naswp_visitors' ) ?>:</td>
+					<td><?php _e( 'Views in past 24 hours', 'visitors-naswp' ) ?>:</td>
 					<th><?php echo $model->get_daily() ?>x</th>
 				</tr>
 				<tr>
-					<td><?php _e( 'Views in past 30 days', 'naswp_visitors' ) ?>:</td>
+					<td><?php _e( 'Views in past 30 days', 'visitors-naswp' ) ?>:</td>
 					<th><?php echo $model->get_monthly() ?>x</th>
 				</tr>
 				<tr>
-					<td><?php _e( 'Views in past 12 months', 'naswp_visitors' ) ?>:</td>
+					<td><?php _e( 'Views in past 12 months', 'visitors-naswp' ) ?>:</td>
 					<th><?php echo $model->get_yearly() ?>x</th>
 				</tr>
 			</tbody>

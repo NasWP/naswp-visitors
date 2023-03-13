@@ -30,10 +30,10 @@ class NasWP_Visitors_Admin_Table
 	 */
 	public function visitorsColumns( array $columns ): array
 	{
-		$columns[NASWP_VISITORS_TOTAL] = __( 'Total views', 'naswp_visitors' );
-		$columns[NASWP_VISITORS_DAILY] = __( 'Daily views', 'naswp_visitors' );
-		$columns[NASWP_VISITORS_MONTHLY] = __( 'Monthly views', 'naswp_visitors' );
-		$columns[NASWP_VISITORS_YEARLY] = __( 'Yearly views', 'naswp_visitors' );
+		$columns[NASWP_VISITORS_TOTAL] = __( 'Total views', 'visitors-naswp' );
+		$columns[NASWP_VISITORS_DAILY] = __( 'Daily views', 'visitors-naswp' );
+		$columns[NASWP_VISITORS_MONTHLY] = __( 'Monthly views', 'visitors-naswp' );
+		$columns[NASWP_VISITORS_YEARLY] = __( 'Yearly views', 'visitors-naswp' );
 
 		return $columns;
 	}

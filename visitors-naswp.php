@@ -1,12 +1,14 @@
 <?php
 /**
-* Plugin Name: Visitors counter
-* Plugin URI: https://naswp.cz/
-* Description: Visitor counting plugin without cookies, localStorage or sessionStorage.
-* Version: 0.0.1
-* Author: NášWP.cz
-* Author URI: https://naswp.cz/
-**/
+ * Plugin Name: Visitors counter
+ * Plugin URI: https://naswp.cz/
+ * Description: Visitor counting plugin without cookies, localStorage or sessionStorage.
+ * Version: 0.0.1
+ * Author: NášWP.cz
+ * Author URI: https://naswp.cz/
+ * Text Domain: visitors-naswp
+ * Domain Path: /languages
+ */
 
 // No direct access
 if ( ! defined( 'WPINC' ) ) {
