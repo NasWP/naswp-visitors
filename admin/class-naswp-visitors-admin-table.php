@@ -3,24 +3,20 @@
 /**
  * Add daily, monthly, yearly and total visits columns to admin tables.
  */
-class NasWP_Visitors_Admin_Table
+abstract class NasWP_Visitors_Admin_Table
 {
+
+	/**
+	 * Get model for given object id (either post or term)
+	 * @param int $objectId
+	 * @return NasWP_Visitors_Base
+	 */
+	abstract protected function getModel(int $objectId): NasWP_Visitors_Base;
 
 	/**
 	 * Hook to admin tables of defined post types.
 	 */
-	public static function hook()
-	{
-		$self = new self();
-		$cpts = apply_filters( 'naswp_visitors_cpt', NASWP_VISITORS_CPT_DEFAULT );
-		foreach ( $cpts as $cpt ) {
-			add_filter( 'manage_' . $cpt . '_posts_columns', [ $self, 'visitorsColumns' ] );
-			add_action( 'manage_' . $cpt . '_posts_custom_column', [ $self, 'populateColumns' ], 10, 2 );
-			add_filter( 'manage_edit-' . $cpt . '_sortable_columns', [ $self, 'sortableColumns' ] );
-		}
-
-		// add_action( 'pre_get_posts', [ $self, 'orderAdminQuery' ] );
-	}
+	abstract public static function hook(): void;
 
 	/**
 	 * Add columns for all time intervals.
@@ -39,15 +35,15 @@ class NasWP_Visitors_Admin_Table
 	}
 
 	/**
-	 * Print number of views in given $column for given $postId
+	 * Print number of views in given $column for given $objectId
 	 * @param string $column
-	 * @param int $postId
+	 * @param int $objectId
 	 * @internal
 	 */
-	public function populateColumns( string $column, int $postId )
+	public function populateColumns( string $column, int $objectId )
 	{
 		if ( in_array( $column, NASWP_VISITORS_COLUMNS ) ) {
-			$visitors = new NasWP_Visitors_Post($postId);
+			$visitors = $this->getModel($objectId);
 			switch ( $column ) {
 				case NASWP_VISITORS_DAILY:
 					$count = $visitors->get_daily();

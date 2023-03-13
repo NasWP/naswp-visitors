@@ -91,7 +91,10 @@ NasWP_Visitors_Query::hook();
 
 // Views in admin tables
 require_once( __DIR__ . '/admin/class-naswp-visitors-admin-table.php' );
-add_action( 'admin_init', ['NasWP_Visitors_Admin_Table', 'hook'] );
+require_once( __DIR__ . '/admin/class-naswp-visitors-admin-table-post.php' );
+require_once( __DIR__ . '/admin/class-naswp-visitors-admin-table-term.php' );
+add_action( 'admin_init', ['NasWP_Visitors_Admin_Table_Post', 'hook'] );
+add_action( 'admin_init', ['NasWP_Visitors_Admin_Table_Term', 'hook'] );
 
 // Admin meta boxes to show and edit views
 require_once( __DIR__ . '/admin/class-naswp-visitors-admin-metabox.php' );
