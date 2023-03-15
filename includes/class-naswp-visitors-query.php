@@ -21,10 +21,10 @@ class NasWP_Visitors_Query
 		// add_action( 'pre_get_posts', [ $self, 'order_query' ] );
 
 		add_filter( 'posts_join_paged', [ $self, 'join_posts_query' ], 10, 2 );
-		add_filter( 'posts_orderby', [ $self, 'orderby_posts_query' ], 99, 2 );
+		add_filter( 'posts_orderby', [ $self, 'orderby_posts_query' ], 10, 2 );
 
 		add_filter( 'terms_clauses', [ $self, 'join_terms_query' ], 10, 3 );
-		add_filter( 'get_terms_orderby', [ $self, 'orderby_terms_query' ], 99, 2 );
+		add_filter( 'get_terms_orderby', [ $self, 'orderby_terms_query' ], 10, 2 );
 	}
 
 	/**
@@ -63,7 +63,7 @@ class NasWP_Visitors_Query
 	public function orderby_posts_query( string $sqlOrderby, WP_Query $query ): string
 	{
 		$orderby = $query->get( 'orderby' );
-		if ( !in_array( $orderby, NASWP_VISITORS_COLUMNS ) ) return $sqlOrderby;
+		if ( !in_array( $orderby, NASWP_VISITORS_COLUMNS ) ) return $sqlOrderby === 'none' ? '' : $sqlOrderby;
 		$order = $query->get( 'order' );
 
 		$updateLimit = static::getLastUpdateLimit($orderby);
@@ -108,7 +108,7 @@ class NasWP_Visitors_Query
 	public function orderby_terms_query( string $oldOrderby, array $args ): string
 	{
 		$orderby = isset( $args['orderby'] ) ? $args['orderby'] : '';
-		if ( !in_array( $orderby, NASWP_VISITORS_COLUMNS ) ) return $orderby;
+		if ( !in_array( $orderby, NASWP_VISITORS_COLUMNS ) ) return $orderby === 'none' ? '' : $orderby;
 
 		$updateLimit = static::getLastUpdateLimit($orderby);
 		$visitCol = "CAST(`$this->visitAlias`.`meta_value` AS SIGNED)";
