@@ -163,12 +163,16 @@ class NasWP_Visitors_Admin_MetaBox
 			return $postId;
 		}
 
+		$p = get_post( $postId );
+		$cpts = apply_filters( 'naswp_visitors_cpt', NASWP_VISITORS_CPT_DEFAULT );
+		if ( !$p || in_array( $p->post_type, $cpts ) ) return $postId;
+
 		$model = new NasWP_Visitors_Post( $postId );
 		if ( isset( $_POST['naswp_reset'] ) && $_POST['naswp_reset'] ) {
 			$model->reset_data();
 		}
 
-		$total = filter_var( $_POST['naswp_total'], FILTER_SANITIZE_NUMBER_INT );
+		$total = intval( filter_var( $_POST['naswp_total'], FILTER_SANITIZE_NUMBER_INT ) );
 		$model->update_total( $total );
 
 		if ( $model->get_last_update() === 0 ) {
