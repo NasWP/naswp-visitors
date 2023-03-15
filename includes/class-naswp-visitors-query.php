@@ -21,10 +21,10 @@ class NasWP_Visitors_Query
 		// add_action( 'pre_get_posts', [ $self, 'order_query' ] );
 
 		add_filter( 'posts_join_paged', [ $self, 'join_posts_query' ], 10, 2 );
-		add_filter( 'posts_orderby', [ $self, 'orderby_posts_query' ], 10, 2 );
+		add_filter( 'posts_orderby', [ $self, 'orderby_posts_query' ], 99, 2 );
 
 		add_filter( 'terms_clauses', [ $self, 'join_terms_query' ], 10, 3 );
-		add_filter( 'get_terms_orderby', [ $self, 'orderby_terms_query' ], 10, 2 );
+		add_filter( 'get_terms_orderby', [ $self, 'orderby_terms_query' ], 99, 2 );
 	}
 
 	/**
