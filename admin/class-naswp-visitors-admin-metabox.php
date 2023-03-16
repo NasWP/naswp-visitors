@@ -47,7 +47,7 @@ class NasWP_Visitors_Admin_MetaBox
 		if ( !in_array( $postType, $cpts ) ) return;
 		add_meta_box(
 			'naswp_visitors',
-			__( 'Visitors', 'visitors-naswp' ),
+			__( 'Visitors', 'naswp-visitors' ),
 			// [ $this, 'render_meta_box_content' ],
 			fn( WP_Post $post ) => $this->render_meta_box_content( new NasWP_Visitors_Post( $post->ID ) ),
 			$postType,
@@ -63,25 +63,24 @@ class NasWP_Visitors_Admin_MetaBox
 	 */
 	public function render_meta_box_content( NasWP_Visitors_Base $model ): void
 	{
-		$type = $model instanceof NasWP_Visitors_Post ? __( 'post', 'visitors-naswp' ) : __( 'term', 'visitors-naswp' );
 		?>
 		<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:20px">
 			<?php
 			$this->render_float_table( $model );
-			// $this->render_views_table( $model, __( 'Daily views', 'visitors-naswp' ), $model->get_daily_data(), 'D, j. F Y' );
-			// $this->render_views_table( $model, __( 'Monthly views', 'visitors-naswp' ), $model->get_monthly_data(), 'F Y', );
-			// $this->render_views_table( $model, __( 'Yearly views', 'visitors-naswp' ), $model->get_yearly_data(), 'Y', );
+			// $this->render_views_table( $model, __( 'Daily visits', 'naswp-visitors' ), $model->get_daily_data(), 'D, j. F Y' );
+			// $this->render_views_table( $model, __( 'Monthly visits', 'naswp-visitors' ), $model->get_monthly_data(), 'F Y', );
+			// $this->render_views_table( $model, __( 'Yearly visits', 'naswp-visitors' ), $model->get_yearly_data(), 'Y', );
 			?>
 		</div>
 		<div style="display:flex;flex-wrap:wrap;align-items:center;gap:30px">
 			<label>
 				<br>
 				<input type="checkbox" name="naswp_reset" value="1">
-				<?php echo sprintf( __( 'Reset all data for this %s on next update. Refresh page after save.', 'visitors-naswp' ), $type ) ?>
+				<?php echo __( 'The next update will reset all this data. Refresh the page after saving.', 'naswp-visitors' ); ?>
 			</label>
 
 			<div class="form-field form-required term-name-wrap">
-				<label for="naswp_total"><?php _e( 'Total views number', 'visitors-naswp' ) ?></label>
+				<label for="naswp_total"><?php _e( 'Adjustment of the total number of visits:', 'naswp-visitors' ) ?></label>
 				<input name="naswp_total" id="naswp_total" type="number" value="<?php echo $model->get_total() ?>" size="40" aria-required="true">
 			</div>
 		</div>
@@ -89,7 +88,7 @@ class NasWP_Visitors_Admin_MetaBox
 	}
 
 	/**
-	 * Render table of total views.
+	 * Render table of total visits.
 	 * @param NasWP_Visitors_Base $model
 	 */
 	private function render_float_table( NasWP_Visitors_Base $model ): void
@@ -98,24 +97,24 @@ class NasWP_Visitors_Admin_MetaBox
 		<table style="flex-shrink:0">
 			<thead>
 				<tr>
-					<th colspan="2" style="text-align:left"><?php _e( 'Statistics', 'visitors-naswp' ) ?></th>
+					<th colspan="2" style="text-align:left"><?php _e( 'Statistics', 'naswp-visitors' ) ?></th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td><?php _e( 'Total views', 'visitors-naswp' ) ?>:</td>
+					<td><?php _e( 'Total visits', 'naswp-visitors' ) ?>:</td>
 					<th><?php echo $model->get_total() ?>x</th>
 				</tr>
 				<tr>
-					<td><?php _e( 'Views in past 24 hours', 'visitors-naswp' ) ?>:</td>
+					<td><?php _e( 'Visits in 24 hours', 'naswp-visitors' ) ?>:</td>
 					<th><?php echo $model->get_daily() ?>x</th>
 				</tr>
 				<tr>
-					<td><?php _e( 'Views in past 30 days', 'visitors-naswp' ) ?>:</td>
+					<td><?php _e( 'Visits in 30 days', 'naswp-visitors' ) ?>:</td>
 					<th><?php echo $model->get_monthly() ?>x</th>
 				</tr>
 				<tr>
-					<td><?php _e( 'Views in past 12 months', 'visitors-naswp' ) ?>:</td>
+					<td><?php _e( 'Visits in 12 months', 'naswp-visitors' ) ?>:</td>
 					<th><?php echo $model->get_yearly() ?>x</th>
 				</tr>
 			</tbody>
@@ -124,7 +123,7 @@ class NasWP_Visitors_Admin_MetaBox
 	}
 
 	/**
-	 * Render views per time interval in table.
+	 * Render visits per time interval in table.
 	 * @param NasWP_Visitors_Base $model
 	 * @param string $title
 	 * @param array|array[] $views

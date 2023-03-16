@@ -1,18 +1,25 @@
 <?php
 /**
- * Plugin Name: Visitors counter
- * Plugin URI: https://naswp.cz/
- * Description: Visitor counting plugin without cookies, localStorage or sessionStorage.
- * Version: 0.0.1
+ * Plugin Name: Visitors
+ * Plugin URI: https://github.com/NasWP/naswp-visitors
+ * Description: Plugin for counting site visits without Cookies, Local Storage or SessionStorage.
+ * Version: 1.0.0
  * Author: NášWP.cz
  * Author URI: https://naswp.cz/
- * Text Domain: visitors-naswp
+ * Text Domain: naswp-visitors
  * Domain Path: /languages
  */
 
 // No direct access
-if ( ! defined( 'WPINC' ) ) {
+if ( !defined( 'WPINC' ) ) {
 	die;
+}
+
+// Adds textdomain for translations.
+add_action( 'admin_init', 'naswp_visitors_textdomain' );
+
+function naswp_visitors_textdomain() {
+	load_plugin_textdomain( 'naswp-visitors', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 }
 
 // Which post types to track by default?
@@ -89,14 +96,14 @@ require_once( __DIR__ . '/includes/class-naswp-visitors-term.php' );
 require_once( __DIR__ . '/includes/class-naswp-visitors-query.php' );
 NasWP_Visitors_Query::hook();
 
-// Views in admin tables
+// Visits in admin tables
 require_once( __DIR__ . '/admin/class-naswp-visitors-admin-table.php' );
 require_once( __DIR__ . '/admin/class-naswp-visitors-admin-table-post.php' );
 require_once( __DIR__ . '/admin/class-naswp-visitors-admin-table-term.php' );
 add_action( 'admin_init', ['NasWP_Visitors_Admin_Table_Post', 'hook'] );
 add_action( 'admin_init', ['NasWP_Visitors_Admin_Table_Term', 'hook'] );
 
-// Admin meta boxes to show and edit views
+// Admin meta boxes to show and edit visits
 require_once( __DIR__ . '/admin/class-naswp-visitors-admin-metabox.php' );
 if ( is_admin() ) NasWP_Visitors_Admin_MetaBox::hook();
 

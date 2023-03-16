@@ -403,7 +403,7 @@ abstract class NasWP_Visitors_Base
 	}
 
 	/**
-	 * Create number of views with lastUpdate timestamp pair.
+	 * Create number of visits with lastUpdate timestamp pair.
 	 * @param int $views
 	 * @param int|null $timestamp Created from referenced timestamp if null given.
 	 * @return array

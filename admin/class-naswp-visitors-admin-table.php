@@ -26,16 +26,16 @@ abstract class NasWP_Visitors_Admin_Table
 	 */
 	public function visitorsColumns( array $columns ): array
 	{
-		$columns[NASWP_VISITORS_TOTAL] = __( 'Total views', 'visitors-naswp' );
-		$columns[NASWP_VISITORS_DAILY] = __( 'Daily views', 'visitors-naswp' );
-		$columns[NASWP_VISITORS_MONTHLY] = __( 'Monthly views', 'visitors-naswp' );
-		$columns[NASWP_VISITORS_YEARLY] = __( 'Yearly views', 'visitors-naswp' );
+		$columns[NASWP_VISITORS_TOTAL] = __( 'Total visits', 'naswp-visitors' );
+		$columns[NASWP_VISITORS_DAILY] = __( 'In 24 hours', 'naswp-visitors' );
+		$columns[NASWP_VISITORS_MONTHLY] = __( 'In 30 days', 'naswp-visitors' );
+		$columns[NASWP_VISITORS_YEARLY] = __( 'In 12 months', 'naswp-visitors' );
 
 		return $columns;
 	}
 
 	/**
-	 * Print number of views in given $column for given $objectId
+	 * Print number of visits in given $column for given $objectId
 	 * @param string $column
 	 * @param int $objectId
 	 * @internal
@@ -63,7 +63,7 @@ abstract class NasWP_Visitors_Admin_Table
 	}
 
 	/**
-	 * Add all views columns as sortable
+	 * Add all visits columns as sortable
 	 * @param array|string[] $columns
 	 * @return array|string[]
 	 * @internal

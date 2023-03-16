@@ -1,0 +1,91 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Visitors\n"
+"POT-Creation-Date: 2023-03-16 16:23+0100\n"
+"PO-Revision-Date: 2023-03-16 16:23+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: cs_CZ\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: naswp-visitors.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#. Plugin Name of the plugin/theme
+#: admin/class-naswp-visitors-admin-metabox.php:50
+msgid "Visitors"
+msgstr "Návštěvy"
+
+#: admin/class-naswp-visitors-admin-metabox.php:79
+msgid ""
+"The next update will reset all this data. Refresh the page after saving."
+msgstr ""
+"Při příští aktualizaci resetuje všechno tato data. Obnovte stránku po "
+"uložení."
+
+#: admin/class-naswp-visitors-admin-metabox.php:83
+msgid "Adjustment of the total number of visits:"
+msgstr "Úprava celkového počtu návštěv:"
+
+#: admin/class-naswp-visitors-admin-metabox.php:100
+msgid "Statistics"
+msgstr "Statistiky"
+
+#: admin/class-naswp-visitors-admin-metabox.php:105
+#: admin/class-naswp-visitors-admin-table.php:29
+msgid "Total visits"
+msgstr "Celkové návštěvy"
+
+#: admin/class-naswp-visitors-admin-metabox.php:109
+msgid "Visits in 24 hours"
+msgstr "Návštěvy za 24 hodin"
+
+#: admin/class-naswp-visitors-admin-metabox.php:113
+msgid "Visits in 30 days"
+msgstr "Návštěvy za 30 dnů"
+
+#: admin/class-naswp-visitors-admin-metabox.php:117
+msgid "Visits in 12 months"
+msgstr "Návštěvy za 12 měsíců"
+
+#: admin/class-naswp-visitors-admin-table.php:30
+msgid "In 24 hours"
+msgstr "Za 24 hodin"
+
+#: admin/class-naswp-visitors-admin-table.php:31
+msgid "In 30 days"
+msgstr "Za 30 dní"
+
+#: admin/class-naswp-visitors-admin-table.php:32
+msgid "In 12 months"
+msgstr "Za 12 měsíců"
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/NasWP/naswp-visitors"
+msgstr "https://github.com/NasWP/naswp-visitors"
+
+#. Description of the plugin/theme
+msgid ""
+"Plugin for counting site visits without Cookies, Local Storage or "
+"SessionStorage."
+msgstr ""
+"Plugin pro počítání návštěv na webu bez Cookies, localStorage a "
+"sessionStorage."
+
+#. Author of the plugin/theme
+msgid "NášWP.cz"
+msgstr "NášWP.cz"
+
+#. Author URI of the plugin/theme
+msgid "https://naswp.cz/"
+msgstr "https://naswp.cz/"

@@ -1,4 +1,4 @@
-# visitors-naswp
+# Visitors
 Visitors plugin for WP community.
 
 ## Plugin configuration

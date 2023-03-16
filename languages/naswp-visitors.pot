@@ -1,0 +1,87 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Visitors\n"
+"POT-Creation-Date: 2023-03-16 16:24+0100\n"
+"PO-Revision-Date: 2023-03-16 16:18+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: naswp-visitors.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#. Plugin Name of the plugin/theme
+#: admin/class-naswp-visitors-admin-metabox.php:50
+msgid "Visitors"
+msgstr ""
+
+#: admin/class-naswp-visitors-admin-metabox.php:79
+msgid ""
+"The next update will reset all this data. Refresh the page after saving."
+msgstr ""
+
+#: admin/class-naswp-visitors-admin-metabox.php:83
+msgid "Adjustment of the total number of visits:"
+msgstr ""
+
+#: admin/class-naswp-visitors-admin-metabox.php:100
+msgid "Statistics"
+msgstr ""
+
+#: admin/class-naswp-visitors-admin-metabox.php:105
+#: admin/class-naswp-visitors-admin-table.php:29
+msgid "Total visits"
+msgstr ""
+
+#: admin/class-naswp-visitors-admin-metabox.php:109
+msgid "Visits in 24 hours"
+msgstr ""
+
+#: admin/class-naswp-visitors-admin-metabox.php:113
+msgid "Visits in 30 days"
+msgstr ""
+
+#: admin/class-naswp-visitors-admin-metabox.php:117
+msgid "Visits in 12 months"
+msgstr ""
+
+#: admin/class-naswp-visitors-admin-table.php:30
+msgid "In 24 hours"
+msgstr ""
+
+#: admin/class-naswp-visitors-admin-table.php:31
+msgid "In 30 days"
+msgstr ""
+
+#: admin/class-naswp-visitors-admin-table.php:32
+msgid "In 12 months"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/NasWP/naswp-visitors"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Plugin for counting site visits without Cookies, Local Storage or "
+"SessionStorage."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "NášWP.cz"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://naswp.cz/"
+msgstr ""
