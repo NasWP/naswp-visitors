@@ -11,23 +11,27 @@ You can modify default configuration using filters. To do so, place this code to
 // Change tracked post types
 add_filter( 'naswp_visitors_cpt', function( array $defaultTypes ) {
 	// Add posts of 'book' post type to be tracked
-	$newTypes = array_merge( $defaultTypes, [ 'book' ] );
+	$defaultTypes[] = 'book';
+	return $defaultTypes;
 
 	// Remove 'page' post type from tracked
-	$newTypes = array_filter( $defaultTypes, fn( string $type ) => $type !== 'page' );
+	return array_filter( $defaultTypes, fn( string $type ) => $type !== 'page' );
 
-	return $newTypes;
+	// Or just return an array of post type slugs
+	return [ 'page', 'post', 'book' ];
 } );
 
 // Change tracked taxonomies
 add_filter( 'naswp_visitors_tax', function( array $defaultTaxonomies ) {
 	// Add terms of 'book_author' to be tracked
-	$newTaxonomies = array_merge( $defaultTaxonomies, [ 'book_author' ] );
+	$defaultTaxonomies[] = 'book_author';
+	return $defaultTaxonomies;
 
 	// Remove 'post_tag' from tracked taxonomies
-	$newTaxonomies = array_filter( $defaultTaxonomies, fn( string $tax ) => $tax !== 'post_tag' );
+	return array_filter( $defaultTaxonomies, fn( string $tax ) => $tax !== 'post_tag' );
 
-	return $newTaxonomies;
+	// Or just return an array of taxonomy slugs
+	return [ 'category', 'post_tag', 'book_author' ];
 } );
 
 // Change tracked user roles (anonymous users are always tracked)
