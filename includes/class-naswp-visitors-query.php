@@ -109,7 +109,7 @@ class NasWP_Visitors_Query
 	public function orderby_terms_query( string $oldOrderby, array $args ): string
 	{
 		$orderby = isset( $args['orderby'] ) ? $args['orderby'] : '';
-		if ( !in_array( $orderby, NASWP_VISITORS_COLUMNS ) ) return $orderby === 'none' ? '' : $orderby;
+		if ( !in_array( $orderby, NASWP_VISITORS_COLUMNS ) ) return $orderby === 'none' ? '' : $oldOrderby;
 
 		$updateLimit = static::getLastUpdateLimit($orderby);
 		$visitCol = "CAST(`$this->visitAlias`.`meta_value` AS SIGNED)";
