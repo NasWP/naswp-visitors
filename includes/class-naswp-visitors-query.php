@@ -79,19 +79,20 @@ class NasWP_Visitors_Query
 
 	public function join_terms_query( array $clauses, array $taxonomies, array $args ): array
 	{
-		$sqlJoin = ( isset( $clauses['join'] ) ) ? $clauses['join'] : '';
+		$visitKey = $args['orderby'];
+		if ( !in_array( $visitKey, NASWP_VISITORS_COLUMNS ) ) return $clauses;
 
+		$sqlJoin = ( isset( $clauses['join'] ) ) ? $clauses['join'] : '';
 		global $wpdb;
 		$terms = 't';
 		$termmeta = $wpdb->termmeta;
-		$visitKey = $args['orderby'];
 		$updateKey = NASWP_VISITORS_LAST_UPDATE;
+
 
 		$sqlJoin .= PHP_EOL . "LEFT JOIN `$termmeta` AS `$this->visitAlias` ON `$this->visitAlias`.`term_id` = `$terms`.`term_id` AND `$this->visitAlias`.`meta_key` = '$visitKey'";
 		if ( self::getLastUpdateLimit( $visitKey ) ) {
 			$sqlJoin .= PHP_EOL . "LEFT JOIN `$termmeta` AS `$this->updateAlias` ON `$this->updateAlias`.`term_id` = `$terms`.`term_id` AND `$this->updateAlias`.`meta_key` = '$updateKey'";
 		}
-
 		$clauses['join'] = $sqlJoin;
 
 		// $this->showTermsSql();
