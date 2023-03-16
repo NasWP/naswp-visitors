@@ -235,8 +235,10 @@ class NasWP_Visitors_Admin_MetaBox
 			$model->reset_data();
 		}
 
-		$total = filter_var( $_POST['naswp_total'], FILTER_SANITIZE_NUMBER_INT );
-		$model->update_total( $total );
+		if ( isset( $_POST['naswp_total'] ) ) {
+			$total = filter_var( $_POST['naswp_total'], FILTER_SANITIZE_NUMBER_INT );
+			$model->update_total( $total );
+		}
 
 		if ( $model->get_last_update() === 0 ) {
 			$model->reset_last_update();
