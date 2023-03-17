@@ -5,7 +5,7 @@ Plugin for tracking site traffic without Cookies, localStorage or sessionStorage
 
 ## How does it work
 
-Plugin doesn't use cookies, session or local storage to identify user. It uses a browser cache, more specifically `$_SERVER['HTTP_IF_MODIFIED_SINCE']`. If the value isn't store in this server variable, the plugin increase visit counts and stores the information to the cache. So if the same user visits the same page again, the plugin will not increase the number of visits due to the information stored in the browser cache, of course until the browser cache is cleared.
+Plugin doesn't use cookies, session or local storage to identify user. It uses the browser cache, specifically `$_SERVER['HTTP_IF_MODIFIED_SINCE']`, where it stores the generated value, so **this plugin does not store any personal information**. If the value isn't store in this server variable, the plugin increase visit counts and stores the information to the cache. So if the same user visits the same page again, the plugin will not increase the number of visits due to the information stored in the browser cache, of course until the browser cache is cleared.
 
 Visits are tracked using AJAX script to prevent any problems caused by caching plugins. Additionaly, visit isn't tracked immediately, user has to either spend 6 seconds on the page or perform any interaction, such as:
 
