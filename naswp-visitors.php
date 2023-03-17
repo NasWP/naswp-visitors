@@ -15,6 +15,17 @@ if ( !defined( 'WPINC' ) ) {
 	die;
 }
 
+// GitHub updater inspired by https://github.com/rayman813/smashing-updater-plugin
+if ( !class_exists( 'Smashing_Updater' ) ){
+	include_once( plugin_dir_path( __FILE__ ) . 'admin/class-sm-github-updater.php' );
+}
+
+$updater = new Smashing_Updater( __FILE__ );
+$updater->set_username( 'NasWP' );
+$updater->set_repository( 'naswp-visitors' );
+// $updater->authorize( 'abcdefghijk1234567890' );
+$updater->initialize();
+
 // Adds textdomain for translations.
 add_action( 'admin_init', 'naswp_visitors_textdomain' );
 
