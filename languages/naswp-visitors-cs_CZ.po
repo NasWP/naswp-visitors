@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Visitors\n"
-"POT-Creation-Date: 2023-03-17 10:26+0100\n"
-"PO-Revision-Date: 2023-03-17 10:27+0100\n"
+"POT-Creation-Date: 2023-03-17 12:53+0100\n"
+"PO-Revision-Date: 2023-03-17 12:54+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: cs_CZ\n"
@@ -81,10 +81,10 @@ msgstr "https://github.com/NasWP/naswp-visitors"
 
 #. Description of the plugin/theme
 msgid ""
-"Plugin for counting site visits without Cookies, Local Storage or "
-"SessionStorage."
+"Plugin for tracking site traffic without Cookies, localStorage or "
+"sessionStorage."
 msgstr ""
-"Plugin pro počítání návštěv na webu bez Cookies, localStorage a "
+"Plugin pro sledování návštěvnosti webu bez Cookies, localStorage nebo "
 "sessionStorage."
 
 #. Author of the plugin/theme
