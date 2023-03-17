@@ -35,6 +35,17 @@ add_filter( 'naswp_visitors_roles', function( array $defaultRoles ) {
 
 ```
 
+## How does it work
+
+Plugin doesn't use cookies, session or local storage to identify user. It uses a browser cache, more specifically `$_SERVER['HTTP_IF_MODIFIED_SINCE']`. If the value isn't store in this server variable, the plugin increase visit counts and stores the information to the cache. When the same user visits the same page again within short period of a time, plugin doesn't increase the visit counts thanks to a cached information.
+
+Visits are tracked using AJAX script to prevent any problems caused by caching plugins. Additionaly, visit isn't tracked immediately, user has to either spend 6 seconds on the page or perform any interaction, such as:
+
+- move with mouse
+- scroll the page
+- touch the screen on mobile devices
+- hit any key on keyboard
+
 ## How to get number of visitors
 
 Visitor counts are stored in post meta / term meta named by default as follows:
