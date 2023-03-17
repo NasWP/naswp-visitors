@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Visitors\n"
 "POT-Creation-Date: 2023-03-17 12:53+0100\n"
-"PO-Revision-Date: 2023-03-17 12:54+0100\n"
+"PO-Revision-Date: 2023-03-17 14:24+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: cs_CZ\n"
@@ -24,7 +24,7 @@ msgstr ""
 #. Plugin Name of the plugin/theme
 #: admin/class-naswp-visitors-admin-metabox.php:69
 msgid "Visitors"
-msgstr "Návštěvy"
+msgstr "Návštěvníci"
 
 #: admin/class-naswp-visitors-admin-metabox.php:97
 msgid "Reset all data except total visits."
