@@ -108,3 +108,11 @@ Order takes into account the time-validation of visitor count as mentioned above
 > There are two limitations:
 > - You can only use **one orderby argument**. Passing orderby as array won't work.
 > - You **can't suppress filters** in the query using `'suppress_filters'` argument.
+
+## CHANGELOG
+
+### 1.0.1
+- Security fix: [Full Path Disclosure](https://owasp.org/www-community/attacks/Full_Path_Disclosure)
+
+### 1.0.0
+- First plugin release with filters for change CPT, TAX and Roles.
