@@ -1,5 +1,6 @@
 # Visitors
-Visitors plugin for WP community.  
+Plugin for tracking site traffic without Cookies, localStorage or sessionStorage.
+
 **Download here -> [naswp-visitors.zip](https://github.com/adam-laita/wp-starter-pack/releases/latest/download/wp-starter-pack.zip)** and upload in Plugin installations.
 
 ## Plugin configuration
