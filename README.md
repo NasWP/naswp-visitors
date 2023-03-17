@@ -10,39 +10,25 @@ You can modify default configuration using filters. To do so, place this code to
 ```php
 // Change tracked post types
 add_filter( 'naswp_visitors_cpt', function( array $defaultTypes ) {
-	// Add posts of 'book' post type to be tracked
-	$defaultTypes[] = 'book';
-	return $defaultTypes;
 
-	// Remove 'page' post type from tracked
-	return array_filter( $defaultTypes, fn( string $type ) => $type !== 'page' );
-
-	// Or just return an array of post type slugs
-	return [ 'page', 'post', 'book' ];
+	// Return an array of post type slugs
+	return [ 'page', 'post', 'movies' ];
+	
 } );
 
 // Change tracked taxonomies
 add_filter( 'naswp_visitors_tax', function( array $defaultTaxonomies ) {
-	// Add terms of 'book_author' to be tracked
-	$defaultTaxonomies[] = 'book_author';
-	return $defaultTaxonomies;
 
-	// Remove 'post_tag' from tracked taxonomies
-	return array_filter( $defaultTaxonomies, fn( string $tax ) => $tax !== 'post_tag' );
-
-	// Or just return an array of taxonomy slugs
-	return [ 'category', 'post_tag', 'book_author' ];
+	// Return an array of taxonomy slugs
+	return [ 'category', 'post_tag', 'movies_genre' ];
+	
 } );
 
 // Change tracked user roles (anonymous users are always tracked)
 add_filter( 'naswp_visitors_roles', function( array $defaultRoles ) {
-	// Add 'admin' role to be tracked
-	$newRoles = array_merge( $defaultRoles, [ 'admin' ] );
 
-	// Remove 'subscriber' from tracked roles
-	$newRoles = array_filter( $defaultRoles, fn( string $role ) => $role !== 'subscriber' );
-
-	return $newRoles;
+	// Return an array of roles
+	return [ 'subscriber', 'admin' ];
 } );
 
 ```
