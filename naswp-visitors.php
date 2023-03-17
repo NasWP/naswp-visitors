@@ -118,7 +118,7 @@ add_action( 'admin_init', ['NasWP_Visitors_Admin_Table_Term', 'hook'] );
 
 // Admin meta boxes to show and edit visits
 require_once( __DIR__ . '/admin/class-naswp-visitors-admin-metabox.php' );
-if ( is_admin() ) NasWP_Visitors_Admin_MetaBox::hook();
+add_action( 'admin_init', fn() => NasWP_Visitors_Admin_MetaBox::hook() );
 
 // Initialize tracking on front-end
 require_once( __DIR__ . '/public/tracking.php' );
