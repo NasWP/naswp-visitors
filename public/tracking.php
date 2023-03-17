@@ -24,11 +24,9 @@ add_action( 'wp', function() {
 	}
 
 	// Init AJAX counter
-	wp_enqueue_script( 'naswp_track_visitors', NASWP_VISITORS_URL . '/public/js/visitors.js', [], false, true );
+	wp_enqueue_script( 'naswp_track_visitors', NASWP_VISITORS_URL . 'public/js/visitors.js', [], false, true );
 	wp_localize_script( 'naswp_track_visitors', 'NASWP_VISITORS', [
-		'ajaxurl' => NASWP_VISITORS_URL . '/public/tracking-ajax.php',
-		// 'ajaxurl' => admin_url( 'admin-ajax.php' ),
-		'path' => ABSPATH,
+		'ajaxurl' => NASWP_VISITORS_URL . 'public/tracking-ajax.php',
 		'nonce' => wp_create_nonce( NASWP_VISITORS_NONCE ),
 		'id' => ($obj instanceof WP_Post) ? $obj->ID : $obj->term_id,
 		'type' => ($obj instanceof WP_Post) ? 'post' : 'tax'

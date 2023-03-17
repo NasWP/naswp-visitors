@@ -3,7 +3,6 @@
  * Measure unique visit hits.
  */
 
-
 if ( !isset( $_GET['nonce'] ) || !isset( $_GET['ID'] ) || !isset( $_GET['path'] ) ) {
 	exit( 'Forbidden' );
 }
@@ -22,8 +21,7 @@ if ( $ifModifiedSince && strtotime( $ifModifiedSince ) === $lastMod ) {
 
 // Verify cached version - $id is the same after 2nd reload
 // echo $id;
-
-require_once( $_GET['path'] . 'wp-load.php' );
+require_once( __DIR__ . '/../../../../wp-load.php' );
 
 $verified = isset( $_GET['nonce'] ) && $_GET['nonce'] && wp_verify_nonce( $_GET['nonce'], NASWP_VISITORS_NONCE );
 if ( !$verified ) wp_send_json_error( 'Error: Nonce invalid.' );
