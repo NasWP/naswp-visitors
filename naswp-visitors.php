@@ -25,7 +25,6 @@ if ( !class_exists( 'Smashing_Updater' ) ){
 $updater = new Smashing_Updater( __FILE__ );
 $updater->set_username( 'NasWP' );
 $updater->set_repository( 'naswp-visitors' );
-// $updater->authorize( 'abcdefghijk1234567890' );
 $updater->initialize();
 
 // Adds textdomain for translations.
