@@ -12,7 +12,7 @@ You can modify default configuration using filters. To do so, place this code to
 add_filter( 'naswp_visitors_cpt', function( array $defaultTypes ) {
 
 	// Return an array of post type slugs
-	return [ 'page', 'post', 'movies' ];
+	return [ 'page', 'post', 'movie' ];
 	
 } );
 
@@ -20,7 +20,7 @@ add_filter( 'naswp_visitors_cpt', function( array $defaultTypes ) {
 add_filter( 'naswp_visitors_tax', function( array $defaultTaxonomies ) {
 
 	// Return an array of taxonomy slugs
-	return [ 'category', 'post_tag', 'movies_genre' ];
+	return [ 'category', 'post_tag', 'movie_genre' ];
 	
 } );
 
