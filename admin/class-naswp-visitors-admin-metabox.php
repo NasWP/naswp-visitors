@@ -94,7 +94,7 @@ class NasWP_Visitors_Admin_MetaBox
 		<div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px">
 			<label>
 				<input type="checkbox" name="naswp_reset" value="1">
-				<?php echo __( 'Reset all visitors data.', 'naswp-visitors' ); ?>
+				<?php echo __( 'Reset all data except total visits.', 'naswp-visitors' ); ?>
 			</label>
 
 			<div class="form-field form-required term-name-wrap">

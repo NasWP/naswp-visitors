@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Visitors\n"
-"POT-Creation-Date: 2023-03-16 16:23+0100\n"
-"PO-Revision-Date: 2023-03-16 16:23+0100\n"
+"POT-Creation-Date: 2023-03-17 10:26+0100\n"
+"PO-Revision-Date: 2023-03-17 10:27+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: cs_CZ\n"
@@ -22,39 +22,44 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
 #. Plugin Name of the plugin/theme
-#: admin/class-naswp-visitors-admin-metabox.php:50
+#: admin/class-naswp-visitors-admin-metabox.php:69
 msgid "Visitors"
 msgstr "Návštěvy"
 
-#: admin/class-naswp-visitors-admin-metabox.php:79
-msgid ""
-"The next update will reset all this data. Refresh the page after saving."
-msgstr ""
-"Při příští aktualizaci resetuje všechno tato data. Obnovte stránku po "
-"uložení."
+#: admin/class-naswp-visitors-admin-metabox.php:97
+msgid "Reset all data except total visits."
+msgstr "Vynulovat všechna data, kromě celkových návštěv."
 
-#: admin/class-naswp-visitors-admin-metabox.php:83
+#: admin/class-naswp-visitors-admin-metabox.php:101
 msgid "Adjustment of the total number of visits:"
 msgstr "Úprava celkového počtu návštěv:"
 
-#: admin/class-naswp-visitors-admin-metabox.php:100
+#: admin/class-naswp-visitors-admin-metabox.php:106
+msgid "Saving..."
+msgstr "Ukládám…"
+
+#: admin/class-naswp-visitors-admin-metabox.php:107
+msgid "Save"
+msgstr "Uložit"
+
+#: admin/class-naswp-visitors-admin-metabox.php:124
 msgid "Statistics"
 msgstr "Statistiky"
 
-#: admin/class-naswp-visitors-admin-metabox.php:105
+#: admin/class-naswp-visitors-admin-metabox.php:129
 #: admin/class-naswp-visitors-admin-table.php:29
 msgid "Total visits"
 msgstr "Celkové návštěvy"
 
-#: admin/class-naswp-visitors-admin-metabox.php:109
+#: admin/class-naswp-visitors-admin-metabox.php:133
 msgid "Visits in 24 hours"
 msgstr "Návštěvy za 24 hodin"
 
-#: admin/class-naswp-visitors-admin-metabox.php:113
+#: admin/class-naswp-visitors-admin-metabox.php:137
 msgid "Visits in 30 days"
 msgstr "Návštěvy za 30 dnů"
 
-#: admin/class-naswp-visitors-admin-metabox.php:117
+#: admin/class-naswp-visitors-admin-metabox.php:141
 msgid "Visits in 12 months"
 msgstr "Návštěvy za 12 měsíců"
 
@@ -89,3 +94,9 @@ msgstr "NášWP.cz"
 #. Author URI of the plugin/theme
 msgid "https://naswp.cz/"
 msgstr "https://naswp.cz/"
+
+#~ msgid ""
+#~ "The next update will reset all this data. Refresh the page after saving."
+#~ msgstr ""
+#~ "Při příští aktualizaci resetuje všechno tato data. Obnovte stránku po "
+#~ "uložení."

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Visitors\n"
-"POT-Creation-Date: 2023-03-16 16:24+0100\n"
+"POT-Creation-Date: 2023-03-17 10:26+0100\n"
 "PO-Revision-Date: 2023-03-16 16:18+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -22,37 +22,44 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
 #. Plugin Name of the plugin/theme
-#: admin/class-naswp-visitors-admin-metabox.php:50
+#: admin/class-naswp-visitors-admin-metabox.php:69
 msgid "Visitors"
 msgstr ""
 
-#: admin/class-naswp-visitors-admin-metabox.php:79
-msgid ""
-"The next update will reset all this data. Refresh the page after saving."
+#: admin/class-naswp-visitors-admin-metabox.php:97
+msgid "Reset all data except total visits."
 msgstr ""
 
-#: admin/class-naswp-visitors-admin-metabox.php:83
+#: admin/class-naswp-visitors-admin-metabox.php:101
 msgid "Adjustment of the total number of visits:"
 msgstr ""
 
-#: admin/class-naswp-visitors-admin-metabox.php:100
+#: admin/class-naswp-visitors-admin-metabox.php:106
+msgid "Saving..."
+msgstr ""
+
+#: admin/class-naswp-visitors-admin-metabox.php:107
+msgid "Save"
+msgstr ""
+
+#: admin/class-naswp-visitors-admin-metabox.php:124
 msgid "Statistics"
 msgstr ""
 
-#: admin/class-naswp-visitors-admin-metabox.php:105
+#: admin/class-naswp-visitors-admin-metabox.php:129
 #: admin/class-naswp-visitors-admin-table.php:29
 msgid "Total visits"
 msgstr ""
 
-#: admin/class-naswp-visitors-admin-metabox.php:109
+#: admin/class-naswp-visitors-admin-metabox.php:133
 msgid "Visits in 24 hours"
 msgstr ""
 
-#: admin/class-naswp-visitors-admin-metabox.php:113
+#: admin/class-naswp-visitors-admin-metabox.php:137
 msgid "Visits in 30 days"
 msgstr ""
 
-#: admin/class-naswp-visitors-admin-metabox.php:117
+#: admin/class-naswp-visitors-admin-metabox.php:141
 msgid "Visits in 12 months"
 msgstr ""
 
