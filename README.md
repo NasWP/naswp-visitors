@@ -14,6 +14,8 @@ Visits are tracked using AJAX script to prevent any problems caused by caching p
 - touch the screen on mobile devices
 - hit any key on keyboard
 
+*This plugin is not a replacement for Google Analytics and similar tools. The measurements are not completely accurate, but from our perspective it is the best way to measure traffic without storing personal data and having to use a cookie bar.*
+
 ## Plugin configuration
 
 By default, this plugin tracks visits of `page` and `post` post types and `category` and `post_tag` taxonomy terms. Visits are tracked only for anonymous users or users logged in with `subscriber` role.
