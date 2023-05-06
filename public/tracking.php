@@ -1,6 +1,7 @@
 <?php
-
-// Enqueue tracking JS if not logged in and visiting matching CPT
+/**
+ * Enqueue tracking JS if not logged in and visiting matching CPT
+ */
 add_action( 'wp', function() {
 	if ( is_admin() ) return;
 
@@ -8,7 +9,6 @@ add_action( 'wp', function() {
 	$obj = get_queried_object();
 	$cpts = apply_filters( 'naswp_visitors_cpt', NASWP_VISITORS_CPT_DEFAULT );
 	$taxonomies = apply_filters( 'naswp_visitors_tax', NASWP_VISITORS_TAX_DEFAULT );
-	// if ( !$obj instanceof WP_Post || !in_array( $obj->post_type, $cpts ) ) return;
 	if (
 		!( $obj instanceof WP_Post && in_array( $obj->post_type, $cpts ) ) &&
 		!( $obj instanceof WP_Term && in_array( $obj->taxonomy, $taxonomies) )
@@ -24,9 +24,9 @@ add_action( 'wp', function() {
 	}
 
 	// Init AJAX counter
-	wp_enqueue_script( 'naswp_track_visitors', NASWP_VISITORS_URL . 'public/js/visitors.js', [], false, true );
+	wp_enqueue_script( 'naswp_track_visitors', plugin_dir_url(__FILE__) . 'js/visitors.js', [], false, true );
 	wp_localize_script( 'naswp_track_visitors', 'NASWP_VISITORS', [
-		'ajaxurl' => NASWP_VISITORS_URL . 'public/tracking-ajax.php',
+		'ajaxurl' => admin_url( 'admin-ajax.php' ),
 		'nonce' => wp_create_nonce( NASWP_VISITORS_NONCE ),
 		'id' => ($obj instanceof WP_Post) ? $obj->ID : $obj->term_id,
 		'type' => ($obj instanceof WP_Post) ? 'post' : 'tax'

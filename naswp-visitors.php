@@ -121,3 +121,5 @@ add_action( 'admin_init', fn() => NasWP_Visitors_Admin_MetaBox::hook() );
 
 // Initialize tracking on front-end
 require_once( __DIR__ . '/public/tracking.php' );
+require_once( __DIR__ . '/public/tracking-ajax.php' );
+
