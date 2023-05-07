@@ -113,6 +113,9 @@ Order takes into account the time-validation of visitor count as mentioned above
 
 ## CHANGELOG
 
+### 1.0.2
+- Best practise update: replacing our AJAX entry with WP admin-ajax.php
+
 ### 1.0.1
 - Security fix: [Full Path Disclosure](https://owasp.org/www-community/attacks/Full_Path_Disclosure)
 
