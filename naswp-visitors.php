@@ -3,7 +3,7 @@
  * Plugin Name: Visitors
  * Plugin URI: https://github.com/NasWP/naswp-visitors
  * Description: Plugin for tracking site traffic without Cookies, localStorage or sessionStorage.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: NášWP.cz
  * Author URI: https://naswp.cz/
  * License: GNU General Public License v3.0
