@@ -78,6 +78,22 @@ echo $visitors->get_yearly();
 echo $visitors->get_total();
 ```
 
+To get sum of all visits for all posts or terms, use static methods as follows:
+
+```php
+// Total sum of all posts
+echo NasWP_Visitors_Post::get_total_sum();
+
+// Total sum of all pages
+echo NasWP_Visitors_Post::get_total_sum( [ 'page' ] );
+
+// Total sum of all terms
+echo NasWP_Visitors_Term::get_total_sum();
+
+// Total sum of all tags
+echo NasWP_Visitors_Term::get_total_sum( [ 'post_tag' ] );
+```
+
 ## How to order WP Query according to to number of visitors
 
 Plugin adds the ability to order WP query and Term query by number of visits in required time interval. Use one of the following constants as orderby value in query arguments:
