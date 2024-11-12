@@ -88,7 +88,11 @@ class Smashing_Updater {
 
 				$this->get_repository_info(); // Get the repo info
 
-				$out_of_date = version_compare( $this->github_response['tag_name'], $checked[ $this->basename ], 'gt' ); // Check if we're out of date
+				$githubVersion = is_array( $this->github_response ) && isset( $this->github_response['tag_name'] ) ? $this->github_response['tag_name'] : null;
+				$currentVersion = is_array( $checked ) && isset( $checked[ $this->basename ] ) ? $checked[ $this->basename ] : null;
+				$out_of_date = $githubVersion !== null && $currentVersion !== null
+					? version_compare( $this->github_response['tag_name'], $checked[ $this->basename ], 'gt' ) // Check if we're out of date
+					: false;
 
 				if( $out_of_date ) {
 
