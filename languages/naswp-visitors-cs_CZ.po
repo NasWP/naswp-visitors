@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Visitors\n"
-"POT-Creation-Date: 2023-03-17 12:53+0100\n"
-"PO-Revision-Date: 2023-03-17 14:24+0100\n"
+"POT-Creation-Date: 2024-12-22 16:32+0100\n"
+"PO-Revision-Date: 2024-12-22 16:34+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: cs_CZ\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.5\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: naswp-visitors.php\n"
@@ -42,12 +42,14 @@ msgstr "Ukládám…"
 msgid "Save"
 msgstr "Uložit"
 
-#: admin/class-naswp-visitors-admin-metabox.php:124
+#: admin/class-naswp-visitors-admin-metabox.php:124 naswp-visitors.php:260
+#: naswp-visitors.php:340
 msgid "Statistics"
 msgstr "Statistiky"
 
 #: admin/class-naswp-visitors-admin-metabox.php:129
-#: admin/class-naswp-visitors-admin-table.php:29
+#: admin/class-naswp-visitors-admin-table.php:29 naswp-visitors.php:346
+#: naswp-visitors.php:378 naswp-visitors.php:452 naswp-visitors.php:493
 msgid "Total visits"
 msgstr "Celkové návštěvy"
 
@@ -63,17 +65,45 @@ msgstr "Návštěvy za 30 dnů"
 msgid "Visits in 12 months"
 msgstr "Návštěvy za 12 měsíců"
 
-#: admin/class-naswp-visitors-admin-table.php:30
+#: admin/class-naswp-visitors-admin-table.php:30 naswp-visitors.php:364
+#: naswp-visitors.php:420 naswp-visitors.php:470 naswp-visitors.php:511
 msgid "In 24 hours"
 msgstr "Za 24 hodin"
 
-#: admin/class-naswp-visitors-admin-table.php:31
+#: admin/class-naswp-visitors-admin-table.php:31 naswp-visitors.php:358
+#: naswp-visitors.php:406 naswp-visitors.php:464 naswp-visitors.php:505
 msgid "In 30 days"
 msgstr "Za 30 dní"
 
-#: admin/class-naswp-visitors-admin-table.php:32
+#: admin/class-naswp-visitors-admin-table.php:32 naswp-visitors.php:352
+#: naswp-visitors.php:392 naswp-visitors.php:458 naswp-visitors.php:499
 msgid "In 12 months"
 msgstr "Za 12 měsíců"
+
+#: naswp-visitors.php:135
+msgid "Visitors - Summary"
+msgstr "Návštěvníci - Souhrn"
+
+#: naswp-visitors.php:266
+msgid "Total number of visitors"
+msgstr "Celkové návštěvy"
+
+#: naswp-visitors.php:295
+msgid "TOP10"
+msgstr "TOP10"
+
+#: naswp-visitors.php:330
+msgid "Visitors - Total"
+msgstr "Návštěvníci - Celkově"
+
+#: naswp-visitors.php:375
+msgid "TOP5"
+msgstr "TOP5"
+
+#: naswp-visitors.php:443 naswp-visitors.php:484
+#, php-format
+msgid "Visitors - %s"
+msgstr "Návštěvníci - %s"
 
 #. Plugin URI of the plugin/theme
 msgid "https://github.com/NasWP/naswp-visitors"

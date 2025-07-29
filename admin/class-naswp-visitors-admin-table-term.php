@@ -28,12 +28,6 @@ final class NasWP_Visitors_Admin_Table_Term extends NasWP_Visitors_Admin_Table
 				10, 3
 			);
 			add_filter( 'manage_edit-' . $tax . '_sortable_columns', [ $self, 'sortableColumns' ] );
-
-			// add_action( 'manage_edit-' . $tax . '_columns', function( array $columns ) {
-			// 	echo '<pre>';
-			// 	print_r($columns);
-			// 	exit();
-			// });
 		}
 	}
 }

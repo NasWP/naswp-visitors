@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Visitors\n"
-"POT-Creation-Date: 2023-03-17 12:54+0100\n"
+"POT-Creation-Date: 2024-12-22 16:32+0100\n"
 "PO-Revision-Date: 2023-03-16 16:18+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.5\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: naswp-visitors.php\n"
@@ -42,12 +42,14 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: admin/class-naswp-visitors-admin-metabox.php:124
+#: admin/class-naswp-visitors-admin-metabox.php:124 naswp-visitors.php:260
+#: naswp-visitors.php:340
 msgid "Statistics"
 msgstr ""
 
 #: admin/class-naswp-visitors-admin-metabox.php:129
-#: admin/class-naswp-visitors-admin-table.php:29
+#: admin/class-naswp-visitors-admin-table.php:29 naswp-visitors.php:346
+#: naswp-visitors.php:378 naswp-visitors.php:452 naswp-visitors.php:493
 msgid "Total visits"
 msgstr ""
 
@@ -63,16 +65,44 @@ msgstr ""
 msgid "Visits in 12 months"
 msgstr ""
 
-#: admin/class-naswp-visitors-admin-table.php:30
+#: admin/class-naswp-visitors-admin-table.php:30 naswp-visitors.php:364
+#: naswp-visitors.php:420 naswp-visitors.php:470 naswp-visitors.php:511
 msgid "In 24 hours"
 msgstr ""
 
-#: admin/class-naswp-visitors-admin-table.php:31
+#: admin/class-naswp-visitors-admin-table.php:31 naswp-visitors.php:358
+#: naswp-visitors.php:406 naswp-visitors.php:464 naswp-visitors.php:505
 msgid "In 30 days"
 msgstr ""
 
-#: admin/class-naswp-visitors-admin-table.php:32
+#: admin/class-naswp-visitors-admin-table.php:32 naswp-visitors.php:352
+#: naswp-visitors.php:392 naswp-visitors.php:458 naswp-visitors.php:499
 msgid "In 12 months"
+msgstr ""
+
+#: naswp-visitors.php:135
+msgid "Visitors - Summary"
+msgstr ""
+
+#: naswp-visitors.php:266
+msgid "Total number of visitors"
+msgstr ""
+
+#: naswp-visitors.php:295
+msgid "TOP10"
+msgstr ""
+
+#: naswp-visitors.php:330
+msgid "Visitors - Total"
+msgstr ""
+
+#: naswp-visitors.php:375
+msgid "TOP5"
+msgstr ""
+
+#: naswp-visitors.php:443 naswp-visitors.php:484
+#, php-format
+msgid "Visitors - %s"
 msgstr ""
 
 #. Plugin URI of the plugin/theme

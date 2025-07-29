@@ -26,10 +26,10 @@ abstract class NasWP_Visitors_Admin_Table
 	 */
 	public function visitorsColumns( array $columns ): array
 	{
-		$columns[NASWP_VISITORS_TOTAL] = __( 'Total visits', 'naswp-visitors' );
 		$columns[NASWP_VISITORS_DAILY] = __( 'In 24 hours', 'naswp-visitors' );
 		$columns[NASWP_VISITORS_MONTHLY] = __( 'In 30 days', 'naswp-visitors' );
 		$columns[NASWP_VISITORS_YEARLY] = __( 'In 12 months', 'naswp-visitors' );
+		$columns[NASWP_VISITORS_TOTAL] = __( 'Total visits', 'naswp-visitors' );
 
 		return $columns;
 	}
