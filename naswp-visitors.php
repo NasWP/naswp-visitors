@@ -115,6 +115,10 @@ require_once( __DIR__ . '/admin/class-naswp-visitors-admin-table-term.php' );
 add_action( 'admin_init', ['NasWP_Visitors_Admin_Table_Post', 'hook'] );
 add_action( 'admin_init', ['NasWP_Visitors_Admin_Table_Term', 'hook'] );
 
+// Admin widgets
+require_once( __DIR__ . '/admin/class-naswp-visitors-admin-widget.php' );
+require_once( __DIR__ . '/admin/class-naswp-visitors-admin-widget-summary.php' );
+add_action( 'admin_init', fn() => NasWP_Visitors_Admin_Widget_Summary::hook() );
 // Admin meta boxes to show and edit visits
 require_once( __DIR__ . '/admin/class-naswp-visitors-admin-metabox.php' );
 add_action( 'admin_init', fn() => NasWP_Visitors_Admin_MetaBox::hook() );

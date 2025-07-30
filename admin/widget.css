@@ -1,0 +1,116 @@
+/**
+ * NasWP admin widget styles
+ */
+
+.naswp-visitors-widget__tabs {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.naswp-visitors-widget__tab-radio {
+	position: absolute;
+	opacity: 0;
+}
+
+.naswp-visitors-widget__tab-label {
+	padding: 5px 10px;
+	cursor: pointer;
+	text-align: center;
+	border: none;
+	font-weight: bold;
+	order: 1;
+	font-size: 14px;
+	background: #f1f1f1;
+	color: #555;
+	transition: background-color .5s;
+	margin-left: 10px;
+	border-top: 1px solid #ccd0d4;
+	border-left: 1px solid #ccd0d4;
+	border-right: 1px solid #ccd0d4;
+}
+
+.naswp-visitors-widget__tab-label:hover {
+	background-color: #fff;
+}
+
+.naswp-visitors-widget__tab-radio:checked + .naswp-visitors-widget__tab-label {
+	background: #fff;
+	color: #000;
+}
+
+.naswp-visitors-widget__tab-content {
+	display: none;
+	order: 99;
+	width: 100%;
+	padding-top: 5px;
+	border-top: 1px solid #ccd0d4;
+}
+
+.naswp-visitors-widget__tab-radio:checked + .naswp-visitors-widget__tab-label + .naswp-visitors-widget__tab-content {
+	display: block;
+}
+
+#dashboard-widgets .naswp-visitors-widget__tab-content h3 {
+	margin: 0;
+	padding: 10px 10px 0 10px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.naswp-visitors-widget__tab-content ol {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	list-style-position: inside;
+	margin: 0;
+	padding: 10px 10px 0 10px;
+}
+
+.naswp-visitors-widget__tab-content ol li::marker {
+	font-weight: bold;
+}
+
+.naswp-visitors-widget__tab-content ol li {
+	font-size: 14px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#dashboard-widgets .naswp-visitors-widget__tab-content ol li a {
+	text-decoration: none;
+	text-decoration: underline solid transparent;
+	transition: text-decoration .5s;
+}
+
+#dashboard-widgets .naswp-visitors-widget__tab-content ol li a:hover {
+	text-decoration: underline;
+	text-decoration-color: currentColor;
+}
+
+.naswp-visitors-widget table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 14px;
+}
+
+.naswp-visitors-widget table tr {
+	border-top: 1px dashed #c3c4c7;
+}
+
+.naswp-visitors-widget table tr:first-child {
+	border-top: none;
+}
+
+.naswp-visitors-widget table td {
+	padding: 10px;
+}
+
+.naswp-visitors-widget__bold {
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.naswp-visitors-widget__align-right {
+	text-align: right;
+}
