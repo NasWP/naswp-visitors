@@ -119,8 +119,13 @@ add_action( 'admin_init', ['NasWP_Visitors_Admin_Table_Term', 'hook'] );
 require_once( __DIR__ . '/admin/class-naswp-visitors-admin-widget.php' );
 require_once( __DIR__ . '/admin/class-naswp-visitors-admin-widget-summary.php' );
 require_once( __DIR__ . '/admin/class-naswp-visitors-admin-widget-total.php' );
+require_once( __DIR__ . '/admin/class-naswp-visitors-admin-widget-cpt.php' );
+require_once( __DIR__ . '/admin/class-naswp-visitors-admin-widget-tax.php' );
 add_action( 'admin_init', fn() => NasWP_Visitors_Admin_Widget_Summary::hook() );
 add_action( 'admin_init', fn() => NasWP_Visitors_Admin_Widget_Total::hook() );
+add_action( 'admin_init', fn() => NasWP_Visitors_Admin_Widget_Cpt::hook() );
+add_action( 'admin_init', fn() => NasWP_Visitors_Admin_Widget_Tax::hook() );
+
 // Admin meta boxes to show and edit visits
 require_once( __DIR__ . '/admin/class-naswp-visitors-admin-metabox.php' );
 add_action( 'admin_init', fn() => NasWP_Visitors_Admin_MetaBox::hook() );
@@ -128,4 +133,3 @@ add_action( 'admin_init', fn() => NasWP_Visitors_Admin_MetaBox::hook() );
 // Initialize tracking on front-end
 require_once( __DIR__ . '/public/tracking.php' );
 require_once( __DIR__ . '/public/tracking-ajax.php' );
-
