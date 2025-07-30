@@ -130,7 +130,7 @@ class NasWP_Visitors_Query
 	 * @param string $forColumn
 	 * @return int|NULL
 	 */
-	public static function getLastUpdateLimit(string $forColumn, int $now = null): ?int
+	public static function getLastUpdateLimit(string $forColumn, ?int $now = null): ?int
 	{
 		if ( $now !== null ) $now = time();
 		switch ( $forColumn ) {

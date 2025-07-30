@@ -9,9 +9,9 @@ final class NasWP_Visitors_Admin_Table_Term extends NasWP_Visitors_Admin_Table
 	/**
 	 * @inheritDoc
 	 */
-	protected function getModel(int $objectId): NasWP_Visitors_Base
+	protected function getModel( int $objectId ): NasWP_Visitors_Base
 	{
-		return new NasWP_Visitors_Term($objectId);
+		return new NasWP_Visitors_Term( $objectId );
 	}
 
 	/**
@@ -24,7 +24,7 @@ final class NasWP_Visitors_Admin_Table_Term extends NasWP_Visitors_Admin_Table
 		foreach ( $taxonomies as $tax ) {
 			add_filter( 'manage_edit-' . $tax . '_columns', [ $self, 'visitorsColumns' ] );
 			add_action( 'manage_' . $tax . '_custom_column',
-				fn( string $string, string $column, int $termId ) => $self->populateColumns($column, $termId),
+				fn( string $string, string $column, int $termId ) => $self->populateColumns( $column, $termId ),
 				10, 3
 			);
 			add_filter( 'manage_edit-' . $tax . '_sortable_columns', [ $self, 'sortableColumns' ] );

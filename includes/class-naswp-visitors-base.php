@@ -29,13 +29,12 @@ abstract class NasWP_Visitors_Base
 	 */
 	abstract protected function update_meta( string $key, $value ): void;
 
-
 	/**
 	 * Instantiate for post of given ID and given reference timestamp.
 	 * @param int $id
 	 * @param int|null $now For testing purposes. Current timestamp if null given.
 	 */
-	public function __construct( int $id, int $now = null )
+	public function __construct( int $id, ?int $now = null )
 	{
 		if ( $now === null ) $now = intval( date_i18n( 'U' ) );
 		$this->id = $id;
@@ -188,7 +187,7 @@ abstract class NasWP_Visitors_Base
 	 * @param array|null $daily Get from data if null given.
 	 * @return array
 	 */
-	public function get_daily_data( int $days = null, array $daily = null ): array
+	public function get_daily_data( ?int $days = null, ?array $daily = null ): array
 	{
 		if ( $daily === null ) {
 			$data = $this->get_data();
@@ -223,7 +222,7 @@ abstract class NasWP_Visitors_Base
 	 * @param array|null $monthly
 	 * @return array
 	 */
-	public function get_monthly_data( int $months = null, array $monthly = null ): array
+	public function get_monthly_data( ?int $months = null, ?array $monthly = null ): array
 	{
 		if ( $monthly === null ) {
 			$data = $this->get_data();
@@ -258,7 +257,7 @@ abstract class NasWP_Visitors_Base
 	 * @param array|null $yearly Get from data if null given.
 	 * @return array
 	 */
-	public function get_yearly_data( int $years = null, array $yearly = null )
+	public function get_yearly_data( ?int $years = null, ?array $yearly = null )
 	{
 		if ( $yearly === null ) {
 			$data = $this->get_data();
@@ -396,7 +395,7 @@ abstract class NasWP_Visitors_Base
 	 * @see https://wordpress.org/documentation/article/customize-date-and-time-format/
 	 * @see https://developer.wordpress.org/reference/functions/date_i18n/
 	 */
-	public function format( string $format, int $timestamp = null ): string
+	public function format( string $format, ?int $timestamp = null ): string
 	{
 		if ( $timestamp === null ) $timestamp = $this->now;
 		return date_i18n( $format, $timestamp );
@@ -408,7 +407,7 @@ abstract class NasWP_Visitors_Base
 	 * @param int|null $timestamp Created from referenced timestamp if null given.
 	 * @return array
 	 */
-	private function create_view( int $views, int $timestamp = null ): array
+	private function create_view( int $views, ?int $timestamp = null ): array
 	{
 		if ($timestamp === null) $timestamp = $this->now;
 		return [

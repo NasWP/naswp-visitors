@@ -11,7 +11,7 @@ abstract class NasWP_Visitors_Admin_Table
 	 * @param int $objectId
 	 * @return NasWP_Visitors_Base
 	 */
-	abstract protected function getModel(int $objectId): NasWP_Visitors_Base;
+	abstract protected function getModel( int $objectId ): NasWP_Visitors_Base;
 
 	/**
 	 * Hook to admin tables of defined post types.

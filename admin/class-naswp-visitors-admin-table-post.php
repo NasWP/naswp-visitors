@@ -9,9 +9,9 @@ final class NasWP_Visitors_Admin_Table_Post extends NasWP_Visitors_Admin_Table
 	/**
 	 * @inheritDoc
 	 */
-	protected function getModel(int $objectId): NasWP_Visitors_Base
+	protected function getModel( int $objectId ): NasWP_Visitors_Base
 	{
-		return new NasWP_Visitors_Post($objectId);
+		return new NasWP_Visitors_Post( $objectId );
 	}
 
 	/**
