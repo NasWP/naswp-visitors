@@ -34,7 +34,7 @@ final class NasWP_Visitors_Term extends NasWP_Visitors_Base
 		$sql = implode( PHP_EOL, $sqlLines );
 
 		$result = $wpdb->get_col( $sql );
-		return ( $result ) ? reset($result) : 0;
+		return ( $result ) ? intval( reset($result) ) : 0;
 	}
 
 	/**
@@ -103,7 +103,7 @@ final class NasWP_Visitors_Term extends NasWP_Visitors_Base
 		$sql = implode( PHP_EOL, $sqlLines );
 
 		$result = $wpdb->get_col( $sql );
-		return ( $result ) ? reset($result) : 0;
+		return ( $result ) ? intval( reset($result) ) : 0;
 	}
 
 	/**
