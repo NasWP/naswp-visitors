@@ -132,7 +132,7 @@ class NasWP_Visitors_Query
 	 */
 	public static function getLastUpdateLimit(string $forColumn, ?int $now = null): ?int
 	{
-		if ( $now !== null ) $now = time();
+		if ( $now === null ) $now = time();
 		switch ( $forColumn ) {
 			case NASWP_VISITORS_DAILY:
 				return strtotime( '-24 hours', $now );
