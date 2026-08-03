@@ -12,7 +12,10 @@ function naswp_track_user() {
 	$lastMod = 1600000000;
 	$ifModifiedSince = isset( $_SERVER['HTTP_IF_MODIFIED_SINCE'] ) ? $_SERVER['HTTP_IF_MODIFIED_SINCE'] : false;
 	header( "Last-Modified: " . gmdate( "D, d M Y H:i:s \G\M\T", $lastMod ) );
-	header( "Cache-Control: public" );
+	// 'private' keeps shared caches (CDN, fastcgi_cache...) from serving this
+	// response to other visitors; max-age spares repeat-view revalidations,
+	// which otherwise boot full WP just to answer 304.
+	header( "Cache-Control: private, max-age=86400" );
 
 	// The script has been loaded with the same modified date - do not track
 	if ( $ifModifiedSince && strtotime( $ifModifiedSince ) === $lastMod ) {

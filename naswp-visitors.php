@@ -34,72 +34,16 @@ function naswp_visitors_textdomain() {
 	load_plugin_textdomain( 'naswp-visitors', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 }
 
-// Which post types to track by default?
-// Use filter 'naswp_visitors_cpt' to change it.
-if ( !defined( 'NASWP_VISITORS_CPT_DEFAULT' ) ) {
-	define( 'NASWP_VISITORS_CPT_DEFAULT', [
-		'page',
-		'post'
-	] );
-}
-
-
-// Which taxonomies to track by default?
-// Use filter 'naswp_visitors_tax' to change it.
-if ( !defined( 'NASWP_VISITORS_TAX_DEFAULT' ) ) {
-	define( 'NASWP_VISITORS_TAX_DEFAULT', [
-		'category',
-		'post_tag'
-	] );
-}
-
-
-// Visits of all anonymous users are tracked.
-// Logged-in users of following default roles will be tracked as well.
-// Use filter 'naswp_visitors_roles' to change it.
-if ( !defined( 'NASWP_VISITORS_USE_WITH_ROLES_DEFAULT' ) ) {
-	define( 'NASWP_VISITORS_USE_WITH_ROLES_DEFAULT', [
-		'subscriber'
-	] );
-}
-
-// Meta keys and admin column names
-if ( !defined( 'NASWP_VISITORS_DATA' ) ) {
-	define( 'NASWP_VISITORS_DATA', 'naswp_visitors_data' );
-}
-if ( !defined( 'NASWP_VISITORS_TOTAL' ) ) {
-	define( 'NASWP_VISITORS_TOTAL', 'naswp_visitors_total' );
-}
-if ( !defined( 'NASWP_VISITORS_DAILY' ) ) {
-	define( 'NASWP_VISITORS_DAILY', 'naswp_visitors_daily' );
-}
-if ( !defined( 'NASWP_VISITORS_MONTHLY' ) ) {
-	define( 'NASWP_VISITORS_MONTHLY', 'naswp_visitors_monthly' );
-}
-if ( !defined( 'NASWP_VISITORS_YEARLY' ) ) {
-	define( 'NASWP_VISITORS_YEARLY', 'naswp_visitors_yearly' );
-}
-if ( !defined( 'NASWP_VISITORS_LAST_UPDATE' ) ) {
-	define( 'NASWP_VISITORS_LAST_UPDATE', 'naswp_visitors_last_update' );
-}
-if ( !defined( 'NASWP_VISITORS_COLUMNS' ) ) {
-	define( 'NASWP_VISITORS_COLUMNS', [
-		NASWP_VISITORS_TOTAL,
-		NASWP_VISITORS_DAILY,
-		NASWP_VISITORS_MONTHLY,
-		NASWP_VISITORS_YEARLY
-	] );
-}
+// Constants shared with the standalone tracking endpoint (public/track.php)
+require_once( __DIR__ . '/includes/constants.php' );
 
 // AJAX-related config
 if ( !defined( 'NASWP_VISITORS_URL' ) ) {
 	define( 'NASWP_VISITORS_URL', plugin_dir_url( __FILE__ ) );
 }
-if ( !defined( 'NASWP_VISITORS_NONCE' ) ) {
-	define( 'NASWP_VISITORS_NONCE', 'naswp_visitors' );
-}
 
 // Visitor counter models
+require_once( __DIR__ . '/includes/class-naswp-visitors-token.php' );
 require_once( __DIR__ . '/includes/class-naswp-visitors-base.php' );
 require_once( __DIR__ . '/includes/class-naswp-visitors-post.php' );
 require_once( __DIR__ . '/includes/class-naswp-visitors-term.php' );

@@ -16,6 +16,16 @@ Visits are tracked using AJAX script to prevent any problems caused by caching p
 
 *This plugin is not a replacement for Google Analytics and similar tools. The measurements are not completely accurate, but from our perspective it is the best way to measure traffic without storing personal data and having to use a cookie bar.*
 
+### Tracking endpoint performance
+
+Since version 1.1.0 the tracking request goes to a standalone endpoint (`public/track.php`) which boots WordPress with the `SHORTINIT` constant - without plugins, theme and most of core. Compared to the previous `admin-ajax.php` route (full WordPress boot for every hit) this cuts the CPU cost of a tracking hit roughly by two orders of magnitude.
+
+The request is secured by a stateless HMAC token derived from the site's secret keys, so it keeps working even on pages served from a long-lived page cache (WP nonces expire after 24 hours, which used to silently stop tracking on cached pages).
+
+If the lightweight endpoint fails - for example when security rules block direct access to PHP files inside `wp-content/plugins/`, or on multisite - the script automatically falls back to the original `admin-ajax.php` route. Tracking keeps working, only without the performance benefit.
+
+If you use a CDN with a "cache everything" rule on `/wp-content/*`, exclude `wp-content/plugins/naswp-visitors/public/track.php` from it, otherwise the CDN would serve the tracking response to other visitors and their visits would not be counted.
+
 ## Plugin configuration
 
 By default, this plugin tracks visits of `page` and `post` post types and `category` and `post_tag` taxonomy terms. Visits are tracked only for anonymous users or users logged in with `subscriber` role.
@@ -128,6 +138,11 @@ Order takes into account the time-validation of visitor count as mentioned above
 > - You **can't suppress filters** in the query using `'suppress_filters'` argument.
 
 ## CHANGELOG
+
+### 1.1.0
+- Performance: tracking hits now go to a standalone `SHORTINIT` endpoint instead of `admin-ajax.php`, so they no longer boot full WordPress (plugins + theme). Automatic fallback to `admin-ajax.php` when the endpoint is unavailable.
+- Fix: tracking on pages served from a page cache older than 24 hours no longer silently stops (stateless HMAC token replaced the expiring WP nonce on the tracking route).
+- Fix: tracking responses are now `Cache-Control: private`, so shared caches (CDN, fastcgi_cache) cannot swallow visits of other users.
 
 ### 1.0.2
 - Best practise update: replacing our AJAX entry with WP admin-ajax.php

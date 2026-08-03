@@ -24,13 +24,26 @@ add_action( 'wp', function() {
 	}
 
 	// Init AJAX counter
-	wp_enqueue_script( 'naswp_track_visitors', plugin_dir_url(__FILE__) . 'js/visitors.js', [], false, true );
-	wp_localize_script( 'naswp_track_visitors', 'NASWP_VISITORS', [
+	$id = ($obj instanceof WP_Post) ? $obj->ID : $obj->term_id;
+	$type = ($obj instanceof WP_Post) ? 'post' : 'tax';
+	$config = [
 		'ajaxurl' => admin_url( 'admin-ajax.php' ),
 		'nonce' => wp_create_nonce( NASWP_VISITORS_NONCE ),
-		'id' => ($obj instanceof WP_Post) ? $obj->ID : $obj->term_id,
-		'type' => ($obj instanceof WP_Post) ? 'post' : 'tax'
-	] );
+		'id' => $id,
+		'type' => $type
+	];
+
+	// Fast standalone endpoint booting WP with SHORTINIT. Not multisite-safe
+	// (URL would resolve to the main site) - admin-ajax fallback covers that.
+	if ( !is_multisite() ) {
+		$d = date_i18n( 'Ymd' );
+		$config['trackUrl'] = plugin_dir_url( __FILE__ ) . 'track.php';
+		$config['d'] = $d;
+		$config['token'] = NasWP_Visitors_Token::create( $id, $type, $d );
+	}
+
+	wp_enqueue_script( 'naswp_track_visitors', plugin_dir_url(__FILE__) . 'js/visitors.js', [], false, true );
+	wp_localize_script( 'naswp_track_visitors', 'NASWP_VISITORS', $config );
 
 
 	// $model = new NasWP_Visitors_Post($obj->ID);
