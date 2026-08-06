@@ -18,7 +18,7 @@ Visits are tracked using AJAX script to prevent any problems caused by caching p
 
 ### Tracking endpoint performance
 
-Since version 1.1.0 the tracking request goes to a standalone endpoint (`public/track.php`) which boots WordPress with the `SHORTINIT` constant - without plugins, theme and most of core. Compared to the previous `admin-ajax.php` route (full WordPress boot for every hit) this cuts the CPU cost of a tracking hit roughly by two orders of magnitude.
+Since version 1.2.0 the tracking request goes to a standalone endpoint (`public/track.php`) which boots WordPress with the `SHORTINIT` constant - without plugins, theme and most of core. Compared to the previous `admin-ajax.php` route (full WordPress boot for every hit) this cuts the CPU cost of a tracking hit roughly by two orders of magnitude.
 
 The request is secured by a stateless HMAC token derived from the site's secret keys, so it keeps working even on pages served from a long-lived page cache (WP nonces expire after 24 hours, which used to silently stop tracking on cached pages).
 
@@ -139,10 +139,14 @@ Order takes into account the time-validation of visitor count as mentioned above
 
 ## CHANGELOG
 
-### 1.1.0
+### 1.2.0
 - Performance: tracking hits now go to a standalone `SHORTINIT` endpoint instead of `admin-ajax.php`, so they no longer boot full WordPress (plugins + theme). Automatic fallback to `admin-ajax.php` when the endpoint is unavailable.
 - Fix: tracking on pages served from a page cache older than 24 hours no longer silently stops (stateless HMAC token replaced the expiring WP nonce on the tracking route).
 - Fix: tracking responses are now `Cache-Control: private`, so shared caches (CDN, fastcgi_cache) cannot swallow visits of other users.
+- Fix: inverted null check in `getLastUpdateLimit()` overwrote the provided reference timestamp.
+
+### 1.1.0
+- Maintenance release (version bump only).
 
 ### 1.0.2
 - Best practise update: replacing our AJAX entry with WP admin-ajax.php
